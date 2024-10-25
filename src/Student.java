@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -10,8 +11,13 @@ public class Student implements Comparable<Student>{
 
     public Student(String name, List<Integer> rates) {
         this.name = name;
-        this.rates = rates;
-        this.avg = avgRate();
+        this.rates =new ArrayList<>(rates);
+        this.avg = avgRate();//vnutrenee zna4enie dlja klasa mojno ne pusatu v ()
+    }
+    //dobavit' ocenki
+    public void addRates(int rate){
+        rates.add(rate);
+        avg=avgRate();
     }
 
    /* public String getName() {
@@ -45,7 +51,11 @@ public class Student implements Comparable<Student>{
                 System.lineSeparator();
     }
 
-    public double avgRate(){
+    public double getAvg() {
+        return avg;
+    }
+
+    private double avgRate(){
         if (rates==null || rates.size()==0){//priverka na null
             return 0;
         }//serednearufmetu4ne

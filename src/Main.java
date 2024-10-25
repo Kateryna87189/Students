@@ -22,6 +22,7 @@ public class Main {
                 new Student("Богдан", List.of(92, 90, 91))
       };
         print(students);
+        System.out.println("---------------------------------------");
         Arrays.sort(students);
           print(students);
 
@@ -39,6 +40,10 @@ public class Main {
         // Виведення відсортованого списку студентів
         System.out.println();
         for (Student student : students) System.out.println(student);*/
+
+        students[0].addRates(10);
+        System.out.println("------------------------------------------------------------");
+        print(students);
     }
     public static void print(Student[] students){
         for (Student student:students){
